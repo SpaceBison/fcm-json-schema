@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "extends": {
+    "$ref": "fcm-notification.json"
+  },
+ "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title schema.",
+      "description": "ndicates notification title. This field is not visible on iOS phones and tablets."
+    },
+    "body": {
+      "type": "string",
+      "title": "Body schema.",
+      "description": "An explanation about the purpose of this instance."
+    },
+    "sound": {
+      "type": "string",
+      "title": "Sound schema.",
+      "description": "Indicates a sound to play when the device receives a notification. Sound files can be in the main bundle of the client app or in the Library/Sounds folder of the app's data container. See the iOS Developer Library for more information."
+    },
+    "badge": {
+      "type": "string",
+      "title": "Badge schema.",
+      "description": "Indicates the badge on the client app home icon."
+    },
+    "click_action": {
+      "type": "string",
+      "title": "Click_action schema.",
+      "description": "Indicates the action associated with a user click on the notification. Corresponds to category in the APNs payload."
+    },
+    "body_loc_key": {
+      "type": "string",
+      "title": "Body_loc_key schema.",
+      "description": "Indicates the key to the body string for localization. Corresponds to \"loc-key\" in the APNs payload."
+    },
+    "body_loc_args": {
+      "type": "string",
+      "title": "Body_loc_args schema.",
+      "description": "Indicates the string value to replace format specifiers in the body string for localization. Corresponds to \"loc-args\" in the APNs payload."
+    },
+    "title_loc_key": {
+      "type": "string",
+      "title": "Title_loc_key schema.",
+      "description": "Indicates the key to the title string for localization. Corresponds to \"title-loc-key\" in the APNs payload."
+    },
+    "title_loc_args": {
+      "type": "array",
+      "title": "Title_loc_args schema.",
+      "description": "Indicates the string value to replace format specifiers in the title string for localization. Corresponds to \"title-loc-args\" in the APNs payload.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

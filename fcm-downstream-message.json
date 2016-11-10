@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "title": "Firebase iOS JSON payload schema",
-  "description": "As per https://firebase.google.com/docs/cloud-messaging/http-server-ref",
+  "title": "Firebase downstream message schema",
+  "description": "As per https://firebase.google.com/docs/cloud-messaging/http-server-ref#downstream-http-messages-json",
   "properties": {
     "to": {
       "type": "string",
@@ -66,70 +66,9 @@
       "properties": {}
     },
     "notification": {
-      "type": "object",
       "title": "Notification schema.",
       "description": "This parameter specifies the predefined, user-visible key-value pairs of the notification payload. See Notification payload support for detail. For more information about notification message and data message options, see Payload - https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages",
-      "properties": {
-        "title": {
-          "type": "string",
-          "title": "Title schema.",
-          "description": "Indicates notification title."
-        },
-        "body": {
-          "type": "string",
-          "title": "Body schema.",
-          "description": "Indicates notification body text."
-        },
-        "icon": {
-            "type": "string",
-            "title": "Icon schema.",
-            "description": "Indicates notification icon. Sets value to myicon for drawable resource myicon."
-        },
-        "sound": {
-          "type": "string",
-          "title": "Sound schema.",
-          "description": "Indicates a sound to play when the device receives a notification. Supports default or the filename of a sound resource bundled in the app. Sound files must reside in /res/raw/."
-        },
-        "tag": {
-          "type": "string",
-          "title": "Tag schema.",
-          "description": "Indicates whether each notification results in a new entry in the notification drawer on Android. If not set, each request creates a new notification. If set, and a notification with the same tag is already being shown, the new notification replaces the existing one in the notification drawer."
-        },
-        "color": {
-          "type": "string",
-          "title": "Color schema.",
-          "description": "Indicates color of the icon, expressed in #rrggbb format"
-        },
-        "click_action": {
-          "type": "string",
-          "title": "Click_action schema.",
-          "description": "Indicates the action associated with a user click on the notification. When this is set, an activity with a matching intent filter is launched when user clicks the notification."
-        },
-        "body_loc_key": {
-          "type": "string",
-          "title": "Body_loc_key schema.",
-          "description": "Indicates the key to the body string for localization. Use the key in the app's string resources when populating this value."
-        },
-        "body_loc_args": {
-          "type": "string",
-          "title": "Body_loc_args schema.",
-          "description": "Indicates the string value to replace format specifiers in the body string for localization. For more information, see Formatting and Styling - http://developer.android.com/guide/topics/resources/string-resource.html#FormattingAndStyling"
-        },
-        "title_loc_key": {
-          "type": "string",
-          "title": "Title_loc_key schema.",
-          "description": "Indicates the key to the title string for localization. Use the key in the app's string resources when populating this value."
-        },
-        "title_loc_args": {
-          "type": "array",
-          "title": "Title_loc_args schema.",
-          "description": "Indicates the string value to replace format specifiers in the title string for localization. For more information, see Formatting strings.",
-          "items": {
-            "type": "string"
-          }
-        }
-    },
-    "required": ["title"]
+      "$ref": "fcm-notification.json"
     }
   },
   "required": ["registration_ids"]
