@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "FCM downstream topic message response",
+  "properties": {
+    "message_id": {
+      "type": "string",
+      "description": "The topic message ID when FCM has successfully received the request and will attempt to deliver to all subscribed devices."
+    },
+    "error": {
+      "type": "string",
+      "description": "Error that occurred when processing the message. The possible values can be found in table 9."
+    }
+  }
+}
