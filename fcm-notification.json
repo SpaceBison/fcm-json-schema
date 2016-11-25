@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {}
+  "title": "Notification schema.",
+  "description": "This parameter specifies the predefined, user-visible key-value pairs of the notification payload. See Notification payload support for detail. For more information about notification message and data message options, see Payload - https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages",
+  "type": "object"
 }
