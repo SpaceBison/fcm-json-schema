@@ -4,7 +4,7 @@
   "title": "FCM downstream message response",
   "properties": {
     "multicast_id": {
-      "type": "integer",
+      "type": "string",
       "description": "Unique ID (number) identifying the multicast message."
     },
     "success": {
