@@ -30,7 +30,11 @@
     "priority": {
       "type": "string",
       "title": "Priority schema.",
-      "description": "Sets the priority of the message. Valid values are \"normal\" and \"high.\" On iOS, these correspond to APNs priorities 5 and 10. By default, messages are sent with normal priority. Normal priority optimizes the client app's battery consumption and should be used unless immediate delivery is required. For messages with normal priority, the app may receive the message with unspecified delay. When a message is sent with high priority, it is sent immediately, and the app can wake a sleeping device and open a network connection to your server. For more information, see Setting the priority of a message."
+      "description": "Sets the priority of the message. Valid values are \"normal\" and \"high.\" On iOS, these correspond to APNs priorities 5 and 10. By default, messages are sent with normal priority. Normal priority optimizes the client app's battery consumption and should be used unless immediate delivery is required. For messages with normal priority, the app may receive the message with unspecified delay. When a message is sent with high priority, it is sent immediately, and the app can wake a sleeping device and open a network connection to your server. For more information, see Setting the priority of a message.",
+      "enum": [
+        "normal",
+        "high"
+      ]
     },
     "content_available": {
       "type": "boolean",
@@ -40,7 +44,6 @@
     "delay_while_idle": {
       "type": "boolean",
       "title": "Delay_while_idle schema.",
-      "default": false,
       "description": "When this parameter is set to true, it indicates that the message should not be sent until the device becomes active. The default value is false."
     },
     "time_to_live": {
@@ -56,18 +59,13 @@
     "dry_run": {
       "type": "boolean",
       "title": "Dry_run schema.",
-      "default": false,
       "description": "This parameter, when set to true, allows developers to test a request without actually sending a message. The default value is false."
     },
     "data": {
-      "type": "object",
       "title": "Data schema.",
-      "description": "This parameter specifies the custom key-value pairs of the message's payload. For example, with data:{\"score\":\"3x1\"}: On iOS, if the message is sent via APNS, it represents the custom data fields. If it is sent via FCM connection server, it would be represented as key value dictionary in AppDelegate application:didReceiveRemoteNotification:. On Android, this would result in an intent extra named score with the string value 3x1. The key should not be a reserved word (\"from\" or any word starting with \"google\" or \"gcm\"). Do not use any of the words defined in this table (such as collapse_key). Values in string types are recommended. You have to convert values in objects or other non-string data types (e.g., integers or booleans) to string.",
-      "properties": {}
+      "description": "This parameter specifies the custom key-value pairs of the message's payload. For example, with data:{\"score\":\"3x1\"}: On iOS, if the message is sent via APNS, it represents the custom data fields. If it is sent via FCM connection server, it would be represented as key value dictionary in AppDelegate application:didReceiveRemoteNotification:. On Android, this would result in an intent extra named score with the string value 3x1. The key should not be a reserved word (\"from\" or any word starting with \"google\" or \"gcm\"). Do not use any of the words defined in this table (such as collapse_key). Values in string types are recommended. You have to convert values in objects or other non-string data types (e.g., integers or booleans) to string."
     },
     "notification": {
-      "title": "Notification schema.",
-      "description": "This parameter specifies the predefined, user-visible key-value pairs of the notification payload. See Notification payload support for detail. For more information about notification message and data message options, see Payload - https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages",
       "$ref": "fcm-notification.json"
     }
   },
