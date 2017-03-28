@@ -48,9 +48,12 @@
       "description": "Indicates the key to the body string for localization. Use the key in the app's string resources when populating this value."
     },
     "body_loc_args": {
-      "type": "string",
+      "type": "array",
       "title": "Body_loc_args schema.",
-      "description": "Indicates the string value to replace format specifiers in the body string for localization. For more information, see Formatting and Styling - http://developer.android.com/guide/topics/resources/string-resource.html#FormattingAndStyling"
+      "description": "Indicates the string value to replace format specifiers in the body string for localization. For more information, see Formatting and Styling - http://developer.android.com/guide/topics/resources/string-resource.html#FormattingAndStyling",
+      "items": {
+        "type": "string"
+      }
     },
     "title_loc_key": {
       "type": "string",
